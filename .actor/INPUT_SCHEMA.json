@@ -6,6 +6,7 @@
     "mode": {
       "title": "What to scan",
       "type": "string",
+      "description": "Scan both sources, only live Polymarket markets, or only Telegram Gifts collections.",
       "editor": "select",
       "default": "both",
       "enum": ["both", "polymarket", "gifts"],
@@ -66,6 +67,7 @@
     "requestTimeoutSecs": {
       "title": "Request timeout (seconds)",
       "type": "integer",
+      "description": "Per-request HTTP timeout for Polymarket and Fragment.",
       "default": 25,
       "minimum": 5,
       "maximum": 120
