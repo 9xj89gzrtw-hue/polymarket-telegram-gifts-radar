@@ -1,0 +1,75 @@
+{
+  "title": "Polymarket & Telegram Gifts scanner input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "mode": {
+      "title": "What to scan",
+      "type": "string",
+      "editor": "select",
+      "default": "both",
+      "enum": ["both", "polymarket", "gifts"],
+      "enumTitles": ["Polymarket + Telegram Gifts", "Polymarket only", "Telegram Gifts only"]
+    },
+    "limit": {
+      "title": "Max Polymarket markets",
+      "type": "integer",
+      "description": "Top markets by liquidity, then re-ranked by the 0-100 score.",
+      "default": 50,
+      "minimum": 1,
+      "maximum": 200
+    },
+    "minLiquidity": {
+      "title": "Minimum market liquidity (USD)",
+      "type": "integer",
+      "description": "Drops markets that are too thin to enter or exit.",
+      "default": 1000,
+      "minimum": 0
+    },
+    "minVolume24h": {
+      "title": "Minimum 24h volume (USD)",
+      "type": "integer",
+      "description": "0 keeps markets with no trades in the last 24 hours.",
+      "default": 0,
+      "minimum": 0
+    },
+    "minScore": {
+      "title": "Minimum score (0-100)",
+      "type": "integer",
+      "description": "Only return candidates at or above this score. 70 = SNIPE, 50 = WATCH.",
+      "default": 0,
+      "minimum": 0,
+      "maximum": 100
+    },
+    "giftLimit": {
+      "title": "Max Telegram gift collections",
+      "type": "integer",
+      "description": "When no explicit collections are given, the Actor takes the first N collections from fragment.com/gifts.",
+      "default": 15,
+      "minimum": 1,
+      "maximum": 60
+    },
+    "giftCollections": {
+      "title": "Gift collections to scan (optional)",
+      "type": "array",
+      "description": "Fragment collection slugs, for example [\"plushpepe\", \"diamondring\"]. Leave empty to auto-pick the top collections.",
+      "editor": "stringList",
+      "default": [],
+      "items": { "type": "string" }
+    },
+    "includeOffer": {
+      "title": "Include the Live Radar Pro offer record",
+      "type": "boolean",
+      "description": "Adds one final record with the Pro dashboard link (TW1-RADAR), price and Plati.Market card.",
+      "default": true
+    },
+    "requestTimeoutSecs": {
+      "title": "Request timeout (seconds)",
+      "type": "integer",
+      "default": 25,
+      "minimum": 5,
+      "maximum": 120
+    }
+  },
+  "required": []
+}

@@ -1,0 +1,101 @@
+{
+  "actorSpecification": 1,
+  "fields": {
+    "type": "object",
+    "properties": {
+      "_type": {
+        "type": "string",
+        "description": "market | gift | summary | offer"
+      },
+      "source": {
+        "type": "string",
+        "description": "polymarket | telegram-gifts"
+      },
+      "question": {
+        "type": ["string", "null"],
+        "description": "Polymarket market question"
+      },
+      "slug": {
+        "type": ["string", "null"],
+        "description": "Polymarket event slug"
+      },
+      "url": {
+        "type": ["string", "null"],
+        "description": "Public market or collection URL"
+      },
+      "collection": {
+        "type": ["string", "null"],
+        "description": "Telegram gift collection name"
+      },
+      "liquidity": {
+        "type": ["number", "null"],
+        "description": "Polymarket liquidity in USD"
+      },
+      "volume_24h": {
+        "type": ["number", "null"],
+        "description": "Polymarket 24h volume in USD"
+      },
+      "spread": {
+        "type": ["number", "null"],
+        "description": "Best ask minus best bid, in probability points"
+      },
+      "momentum_24h": {
+        "type": ["number", "null"],
+        "description": "One-day price change as a fraction"
+      },
+      "overround": {
+        "type": ["number", "null"],
+        "description": "Sum of outcome prices minus 1; negative means all outcomes cost < $1"
+      },
+      "arbitrage_pct": {
+        "type": ["number", "null"],
+        "description": "Negative-overround arbitrage in percent"
+      },
+      "floor_ton": {
+        "type": ["number", "null"],
+        "description": "Cheapest active gift listing in TON"
+      },
+      "floor_usd": {
+        "type": ["number", "null"],
+        "description": "Cheapest active gift listing in USD"
+      },
+      "sold_median_ton": {
+        "type": ["number", "null"],
+        "description": "Median recent sold price in TON"
+      },
+      "spread_pct": {
+        "type": ["number", "null"],
+        "description": "Gift floor vs recent sold median, percent"
+      },
+      "score": {
+        "type": "integer",
+        "description": "Transparent 0-100 score"
+      },
+      "score_components": {
+        "type": "object",
+        "description": "Liquidity, spread, momentum and volume points"
+      },
+      "signal": {
+        "type": "string",
+        "description": "SNIPE | WATCH | IGNORE"
+      },
+      "reasons": {
+        "type": "array",
+        "description": "Human-readable reasons behind the score"
+      },
+      "offer": {
+        "type": "string",
+        "description": "One-line Live Radar Pro offer repeated in every record"
+      }
+    }
+  },
+  "views": {
+    "signals": {
+      "title": "Ranked signals",
+      "transformation": {
+        "fields": ["signal", "score", "source", "question", "collection", "spread", "spread_pct", "momentum_24h"]
+      },
+      "display": { "component": "table" }
+    }
+  }
+}

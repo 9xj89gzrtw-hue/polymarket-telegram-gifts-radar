@@ -1,0 +1,38 @@
+{
+  "name": "polymarket-telegram-gifts-radar",
+  "version": "1.0.0",
+  "description": "Apify Actor that scans Polymarket markets and Telegram Gifts floors, scores liquidity/spread/momentum and flags SNIPE setups.",
+  "type": "module",
+  "main": "src/run.js",
+  "scripts": {
+    "start": "node src/main.js",
+    "test": "node --test",
+    "smoke": "node src/main.js --mode polymarket --limit 5"
+  },
+  "keywords": [
+    "apify",
+    "apify-actor",
+    "polymarket",
+    "prediction-markets",
+    "telegram-gifts",
+    "fragment",
+    "arbitrage",
+    "scanner",
+    "trading",
+    "finance",
+    "crypto"
+  ],
+  "author": "9xj89gzrtw-hue",
+  "license": "MIT",
+  "homepage": "https://9xj89gzrtw-hue.github.io/live-radar/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/9xj89gzrtw-hue/polymarket-telegram-gifts-radar.git"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "apify": "^3.2.0"
+  }
+}

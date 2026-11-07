@@ -1,0 +1,31 @@
+{
+  "actorOutputSchemaVersion": 1,
+  "title": "Polymarket & Telegram Gifts — ranked signals",
+  "description": "One record per market or gift collection, plus a run summary and the Live Radar Pro offer. Export as CSV or XLSX from the Apify Console.",
+  "properties": {
+    "signals": {
+      "type": "string",
+      "title": "Ranked signals (JSON)",
+      "description": "Markets and gift collections sorted by score, with SNIPE / WATCH / IGNORE flags.",
+      "template": "{{links.apiDefaultDatasetUrl}}/items"
+    },
+    "csv": {
+      "type": "string",
+      "title": "Ranked signals (CSV)",
+      "description": "Dataset as CSV for Excel / Google Sheets.",
+      "template": "{{links.apiDefaultDatasetUrl}}/items?format=csv"
+    },
+    "xlsx": {
+      "type": "string",
+      "title": "Ranked signals (XLSX)",
+      "description": "Dataset as a real Excel workbook.",
+      "template": "{{links.apiDefaultDatasetUrl}}/items?format=xlsx"
+    },
+    "summary": {
+      "type": "string",
+      "title": "Run summary",
+      "description": "Counts, TON/USD rate and failures.",
+      "template": "{{links.apiDefaultKeyValueStoreUrl}}/records/SUMMARY"
+    }
+  }
+}
