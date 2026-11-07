@@ -1,7 +1,7 @@
 {
   "actorSpecification": 1,
   "name": "polymarket-and-telegram-gifts-arbitrage-scanner",
-  "title": "Polymarket & Telegram Gifts Arbitrage Scanner — Spread, Momentum, SNIPE",
+  "title": "Polymarket & TG Gifts Spread, Momentum & Snipe Scanner",
   "description": "Scan live Polymarket markets and Telegram Gifts floors. Get liquidity, spread, 24h momentum, overround/arbitrage and a transparent 0-100 score with SNIPE / WATCH / IGNORE flags. Free tier + Live Radar Pro dashboard (TW1-RADAR).",
   "version": "1.0",
   "buildTag": "latest",
